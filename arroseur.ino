@@ -8,7 +8,7 @@ int digitalValue = 0;
 
 
 void setup() {
-  //pinMode(sensorPinD, INPUT);
+  pinMode(sensorPinD, INPUT);
   pinMode(vccPin, OUTPUT);
   pinMode(moteurPin, OUTPUT);
   pinMode(ledPin, OUTPUT);
@@ -22,10 +22,10 @@ void loop() {
   delay(1000);
   digitalValue = analogRead(sensorPinD);
   digitalWrite(vccPin, LOW);
-  if (digitalValue < 700) {
+  if (digitalValue > 700) {
     digitalWrite(ledPin, HIGH);
     digitalWrite(moteurPin, HIGH);
-    delay(digitalValue * 10);
+    delay(10000);
     digitalWrite(ledPin, LOW);
     digitalWrite(moteurPin, LOW);
   }
