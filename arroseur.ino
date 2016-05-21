@@ -18,18 +18,19 @@ void setup() {
 }
 
 void loop() {
+  delay(60000);
   digitalWrite(vccPin, HIGH);
   delay(1000);
   digitalValue = analogRead(sensorPinD);
   digitalWrite(vccPin, LOW);
-  if (digitalValue > 700) {
+  if (digitalValue > 600) {
     digitalWrite(ledPin, HIGH);
     digitalWrite(moteurPin, HIGH);
-    delay(10000);
+    delay(20000);
     digitalWrite(ledPin, LOW);
     digitalWrite(moteurPin, LOW);
   }
-  delay(60000);
+  delay(60000*4);
 
 
 
